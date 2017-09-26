@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "1055667513777",
+    "firebase_url": "https://onibusamparo.firebaseio.com",
+    "project_id": "onibusamparo",
+    "storage_bucket": "onibusamparo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1055667513777:android:486d2e739d0f0d4b",
+        "android_client_info": {
+          "package_name": "br.com.andersonassis.amparo.onibus.horario.horarioonibusamparo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1055667513777-iiv6dhtq4gq4c9eird2nd8jj8f9se74b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.andersonassis.amparo.onibus.horario.horarioonibusamparo",
+            "certificate_hash": "a7d377d77721ef98cab017cf60047f61bd72c4a3"
+          }
+        },
+        {
+          "client_id": "1055667513777-vq03h3ha7c299l22tlha2k29sujobgho.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgGmrYEyJpWK6mkLsllbT2CARYgpAApso"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1055667513777-vq03h3ha7c299l22tlha2k29sujobgho.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1055667513777:android:038e49e52d824f5c",
+        "android_client_info": {
+          "package_name": "br.com.andersonluisassis.amparo.onibus.horario.horariocircularamparo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1055667513777-grd7sp5uhfjfn4ancbjgetmtbtdcqac7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.andersonluisassis.amparo.onibus.horario.horariocircularamparo",
+            "certificate_hash": "a7d377d77721ef98cab017cf60047f61bd72c4a3"
+          }
+        },
+        {
+          "client_id": "1055667513777-vq03h3ha7c299l22tlha2k29sujobgho.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgGmrYEyJpWK6mkLsllbT2CARYgpAApso"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1055667513777-vq03h3ha7c299l22tlha2k29sujobgho.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

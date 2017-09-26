@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Horario Circular Amparo</string>
+    <string name="tentar_novamente">Tentar novamente</string>
+    <string name="sem_conexao">Sem conexão com internet por favor verifique</string>
+</resources>
