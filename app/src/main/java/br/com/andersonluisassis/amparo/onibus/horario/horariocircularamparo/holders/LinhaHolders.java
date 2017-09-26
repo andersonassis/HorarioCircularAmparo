@@ -3,12 +3,16 @@ package br.com.andersonluisassis.amparo.onibus.horario.horariocircularamparo.hol
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 import br.com.andersonluisassis.amparo.onibus.horario.horariocircularamparo.DiasSemana;
 import br.com.andersonluisassis.amparo.onibus.horario.horariocircularamparo.R;
@@ -24,15 +28,17 @@ public final class LinhaHolders extends RecyclerView.ViewHolder {
     @BindView(R.id.txtnome) public TextView txtdescricao;
     public Linhas linhas;
     public int id;
+    public int seg;
+    public int saba;
+    public int domi;
     public String descr;
+    public int somentesexta;
     Context c;
 
     public LinhaHolders(LayoutInflater inflater, ViewGroup parent) {
         super(inflater.inflate(R.layout.item_linhas, parent, false));
 
         ButterKnife.bind(this, itemView);
-
-
 
         // clica na categoria
         itemView.setOnClickListener(new View.OnClickListener(){
@@ -41,11 +47,28 @@ public final class LinhaHolders extends RecyclerView.ViewHolder {
                 c = v.getContext();
                 try {
                     id            = linhas.getId();
-                    descr  = linhas.getDescricao();
+                    descr         = linhas.getDescricao();
+                    seg           = linhas.getIdseg();
+                    saba          = linhas.getIdsab();
+                    domi          = linhas.getIddom();
+                    somentesexta  = linhas.getIdsexta();
+
+                    String iddados  = String.valueOf(id);
+                    String segdados = String.valueOf(seg);
+                    String sabadados = String.valueOf(saba);
+                    String domidados = String.valueOf(domi);
+                    String somentesextadados = String.valueOf(somentesexta);
+
+                    String[] dados={iddados, descr, segdados, sabadados, domidados, somentesextadados};
 
                     Intent intent = new Intent(c,DiasSemana.class);
-                    intent.putExtra("id_categoria", Long.toString(linhas.getId()));
+                   // intent.putExtra("id_linhas", Long.toString(linhas.getId()));
+                   // intent.putStringArrayListExtra("id_linhas", dados);
+                    intent.putExtra("id_linhas", Arrays.toString(dados));
                     c.startActivity(intent);
+
+
+
                 }catch (Exception e){
                     e.printStackTrace();
                 }

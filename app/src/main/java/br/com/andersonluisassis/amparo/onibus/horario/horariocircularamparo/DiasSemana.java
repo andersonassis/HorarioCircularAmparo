@@ -7,6 +7,8 @@ import butterknife.ButterKnife;
 
 public class DiasSemana extends AppCompatActivity {
     private String idLinhas;
+    private String []idLinhas2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,7 +16,8 @@ public class DiasSemana extends AppCompatActivity {
         setContentView(R.layout.activity_dias_semana);
         ButterKnife.bind(this);
 
-        idLinhas = getIntent().getStringExtra("id_categoria");
+           idLinhas = getIntent().getStringExtra("id_linhas");
+          // idLinhas2 =   getIntent().getStringArrayListExtra("id_linhas");
 
 
 
