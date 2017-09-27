@@ -1,5 +1,7 @@
 package br.com.andersonluisassis.amparo.onibus.horario.horariocircularamparo.models;
 
+import java.util.List;
+
 /**
  * Created by AndersonLuis on 26/09/2017.
  */
@@ -7,47 +9,9 @@ package br.com.andersonluisassis.amparo.onibus.horario.horariocircularamparo.mod
 public class Linhas  {
 
     private int id;
-
-    public int getIdseg() {
-        return idseg;
-    }
-
-    public void setIdseg(int idseg) {
-        this.idseg = idseg;
-    }
-
-    public int getIdsab() {
-        return idsab;
-    }
-
-    public void setIdsab(int idsab) {
-        this.idsab = idsab;
-    }
-
-    public int getIdsexta() {
-        return idsexta;
-    }
-
-    public void setIdsexta(int idsexta) {
-        this.idsexta = idsexta;
-    }
-
-    public int getIddom() {
-        return iddom;
-    }
-
-    public void setIddom(int iddom) {
-        this.iddom = iddom;
-    }
-
-    private int idseg;
-    private int idsab;
-    private int idsexta;
-    private int iddom;
     private String descricao;
-
-
-
+    private int user_id;
+    private List<DiasSemana> semana;
 
     public int getId() {
         return id;
@@ -66,8 +30,19 @@ public class Linhas  {
     }
 
 
+    public int getUser_id() {
+        return user_id;
+    }
 
+    public void setUser_id(int user_id) {
+        this.user_id = user_id;
+    }
 
+    public List<DiasSemana> getSemana() {
+        return semana;
+    }
 
-
+    public void setSemana(List<DiasSemana> semana) {
+        this.semana = semana;
+    }
 }

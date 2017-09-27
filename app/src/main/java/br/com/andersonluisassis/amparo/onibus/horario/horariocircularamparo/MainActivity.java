@@ -17,6 +17,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.andersonluisassis.amparo.onibus.horario.horariocircularamparo.Toast.ToastManager;
 import br.com.andersonluisassis.amparo.onibus.horario.horariocircularamparo.adapter.LinhaAdapter;
 import br.com.andersonluisassis.amparo.onibus.horario.horariocircularamparo.models.Linhas;
 import br.com.andersonluisassis.amparo.onibus.horario.horariocircularamparo.testarConexao.TestarConexao;
@@ -41,10 +42,9 @@ public class MainActivity extends AppCompatActivity implements ValueEventListene
         // Verificando conexao com internet
         boolean conexao = TestarConexao.verificaConexao(this);
         if (conexao) {
-            Toast.makeText(MainActivity.this, "Conectado a Internet", Toast.LENGTH_LONG).show();
+            ToastManager.show(MainActivity.this, "Conectado a Internet", ToastManager.INFORMATION);
         } else {
-
-            Toast.makeText(MainActivity.this, "Sem Conexão com Internet,Verifique", Toast.LENGTH_LONG).show();
+            ToastManager.show(MainActivity.this, "Sem Conexão com Internet,Verifique", ToastManager.INFORMATION);
             startActivity(new Intent(MainActivity.this, VerificarConexao.class));
             finish();
 

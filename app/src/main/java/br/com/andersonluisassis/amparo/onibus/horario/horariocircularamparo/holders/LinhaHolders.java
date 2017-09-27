@@ -11,6 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -28,11 +30,9 @@ public final class LinhaHolders extends RecyclerView.ViewHolder {
     @BindView(R.id.txtnome) public TextView txtdescricao;
     public Linhas linhas;
     public int id;
-    public int seg;
-    public int saba;
-    public int domi;
+    public int user_id;
     public String descr;
-    public int somentesexta;
+
     Context c;
 
     public LinhaHolders(LayoutInflater inflater, ViewGroup parent) {
@@ -47,27 +47,23 @@ public final class LinhaHolders extends RecyclerView.ViewHolder {
                 c = v.getContext();
                 try {
                     id            = linhas.getId();
-                    descr         = linhas.getDescricao();
-                    seg           = linhas.getIdseg();
-                    saba          = linhas.getIdsab();
-                    domi          = linhas.getIddom();
-                    somentesexta  = linhas.getIdsexta();
-
-                    String iddados  = String.valueOf(id);
-                    String segdados = String.valueOf(seg);
-                    String sabadados = String.valueOf(saba);
-                    String domidados = String.valueOf(domi);
-                    String somentesextadados = String.valueOf(somentesexta);
-
-                    String[] dados={iddados, descr, segdados, sabadados, domidados, somentesextadados};
-
+                    user_id       = linhas.getUser_id();
                     Intent intent = new Intent(c,DiasSemana.class);
-                   // intent.putExtra("id_linhas", Long.toString(linhas.getId()));
-                   // intent.putStringArrayListExtra("id_linhas", dados);
-                    intent.putExtra("id_linhas", Arrays.toString(dados));
+                    try {
+                        String listSerializedToJson = new Gson().toJson(linhas.getSemana());
+                        intent.putExtra("semana", listSerializedToJson);
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
                     c.startActivity(intent);
 
+                   // intent.putExtra("id_linhas", Long.toString(linhas.getUser_id()));
+                   // c.startActivity(intent);
 
+                   // String iddados  = String.valueOf(id);
+                   // String[] dados={iddados, descr};
+                   // intent.putStringArrayListExtra("id_linhas", dados);
+                  //  intent.putExtra("id_linhas", Arrays.toString(dados));
 
                 }catch (Exception e){
                     e.printStackTrace();

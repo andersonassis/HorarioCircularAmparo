@@ -2,4 +2,5 @@
     <string name="app_name">Horario Circular Amparo</string>
     <string name="tentar_novamente">Tentar novamente</string>
     <string name="sem_conexao">Sem conexão com internet por favor verifique</string>
+    <string name="escolher_dias">Escolha o dia abaixo </string>
 </resources>
