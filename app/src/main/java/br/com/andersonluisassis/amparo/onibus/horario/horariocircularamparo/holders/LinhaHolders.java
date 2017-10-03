@@ -46,15 +46,6 @@ public final class LinhaHolders extends RecyclerView.ViewHolder {
                     Intent intent = new Intent(c,DiasSemana.class);
                     intent.putExtra("id_linha", Long.toString(linhas.getId()));
                     c.startActivity(intent);
-                   /* try {
-                        String listSerializedToJson = new Gson().toJson(linhas.getSemana());
-                        String lista2 = new Gson().toJson(linhas.getHorarios());
-                        intent.putExtra("semana", listSerializedToJson);
-                        intent.putExtra("horarios", lista2);
-
-                    }catch (Exception e){
-                        e.printStackTrace();
-                    }*/
 
             }
         });

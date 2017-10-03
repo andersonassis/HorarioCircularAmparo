@@ -67,7 +67,6 @@ public class MainActivity extends AppCompatActivity implements ValueEventListene
 
                 e.printStackTrace();
             }
-           // Linhas objeto = snapshot.getValue(Linhas.class);
 
         }//fim do for
         adaptador = new LinhaAdapter(reciclada.getContext(),lista);
@@ -79,6 +78,6 @@ public class MainActivity extends AppCompatActivity implements ValueEventListene
 
     @Override
     public void onCancelled(DatabaseError databaseError) {
-        Log.w("RETORNO", "loadPost:onCancelled", databaseError.toException());
+        ToastManager.show(MainActivity.this, "ERRO DE CONEXÃO COM O BANCO DE DADOS", ToastManager.INFORMATION);
     }
 }
