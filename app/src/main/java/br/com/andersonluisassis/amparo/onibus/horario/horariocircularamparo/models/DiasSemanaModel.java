@@ -1,19 +1,20 @@
 package br.com.andersonluisassis.amparo.onibus.horario.horariocircularamparo.models;
 
-import java.io.Serializable;
-import java.util.List;
-import java.util.Map;
-
 /**
- * Created by AndersonLuis on 26/09/2017.
+ * Created by AndersonLuis on 27/09/2017.
  */
 
-public class Linhas  {
-
-    private int id;
+public class DiasSemanaModel {
     private String descricao;
+    private int id;
 
+    public DiasSemanaModel(){
+    }
 
+    public DiasSemanaModel(String descricao) {
+        this.descricao    = descricao;
+
+    }
 
 
     public int getId() {
@@ -31,7 +32,4 @@ public class Linhas  {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-
-
-
 }

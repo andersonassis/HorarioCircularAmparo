@@ -30,9 +30,6 @@ public final class LinhaHolders extends RecyclerView.ViewHolder {
     @BindView(R.id.txtnome) public TextView txtdescricao;
     public Linhas linhas;
     public int id;
-    public int user_id;
-    public String descr;
-
     Context c;
 
     public LinhaHolders(LayoutInflater inflater, ViewGroup parent) {
@@ -45,29 +42,19 @@ public final class LinhaHolders extends RecyclerView.ViewHolder {
             @Override
             public void onClick(View v){
                 c = v.getContext();
-                try {
-                    id            = linhas.getId();
-                    user_id       = linhas.getUser_id();
+                     id            = linhas.getId();
                     Intent intent = new Intent(c,DiasSemana.class);
-                    try {
+                    intent.putExtra("id_linha", Long.toString(linhas.getId()));
+                    c.startActivity(intent);
+                   /* try {
                         String listSerializedToJson = new Gson().toJson(linhas.getSemana());
+                        String lista2 = new Gson().toJson(linhas.getHorarios());
                         intent.putExtra("semana", listSerializedToJson);
+                        intent.putExtra("horarios", lista2);
+
                     }catch (Exception e){
                         e.printStackTrace();
-                    }
-                    c.startActivity(intent);
-
-                   // intent.putExtra("id_linhas", Long.toString(linhas.getUser_id()));
-                   // c.startActivity(intent);
-
-                   // String iddados  = String.valueOf(id);
-                   // String[] dados={iddados, descr};
-                   // intent.putStringArrayListExtra("id_linhas", dados);
-                  //  intent.putExtra("id_linhas", Arrays.toString(dados));
-
-                }catch (Exception e){
-                    e.printStackTrace();
-                }
+                    }*/
 
             }
         });

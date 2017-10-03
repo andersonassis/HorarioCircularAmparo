@@ -28,6 +28,7 @@ import butterknife.ButterKnife;
 public class MainActivity extends AppCompatActivity implements ValueEventListener {
     private FirebaseDatabase database = FirebaseDatabase.getInstance();
     private DatabaseReference data_reference;
+    private DatabaseReference data_reference2;
     public List<Linhas> lista = new ArrayList<>();
     private LinhaAdapter adaptador;
     @BindView(R.id.recyclerView) RecyclerView  reciclada;
@@ -49,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements ValueEventListene
             finish();
 
         }
-        data_reference = database.getReference().child("linhas");
+        data_reference  = database.getReference().child("linhas");
         data_reference.addValueEventListener(this);
 
     }//fim do oncreate
@@ -59,8 +60,15 @@ public class MainActivity extends AppCompatActivity implements ValueEventListene
         lista.clear();
         for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
             cont++;
-            Linhas objeto = snapshot.getValue(Linhas.class);
-            lista.add(objeto);
+            try {
+                Linhas objeto = snapshot.getValue(Linhas.class);
+                lista.add(objeto);
+            }catch (Exception e){
+
+                e.printStackTrace();
+            }
+           // Linhas objeto = snapshot.getValue(Linhas.class);
+
         }//fim do for
         adaptador = new LinhaAdapter(reciclada.getContext(),lista);
         reciclada.setAdapter(adaptador);

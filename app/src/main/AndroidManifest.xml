@@ -21,7 +21,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".DiasSemana" />
-        <activity android:name=".testarConexao.VerificarConexao"></activity>
+        <activity android:name=".testarConexao.VerificarConexao" />
+        <activity android:name=".Horarios"></activity>
     </application>
 
 </manifest>
