@@ -3,4 +3,6 @@
     <string name="tentar_novamente">Tentar novamente</string>
     <string name="sem_conexao">Sem conexão com internet por favor verifique</string>
     <string name="escolher_dias">Escolha o dia abaixo </string>
+    <string name="procurar">Buscar a saída (bairro) </string>
+
 </resources>
