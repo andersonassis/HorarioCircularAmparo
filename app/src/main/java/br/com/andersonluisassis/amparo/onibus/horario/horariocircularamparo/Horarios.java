@@ -55,7 +55,7 @@ public class Horarios extends AppCompatActivity implements ValueEventListener {
         }else if (dias.equals("Domingos e Feriados")){
             dias = "domingos";
         }else{
-            dias = "outro";
+            dias = "outros";
         }
 
         //inicia o firebase

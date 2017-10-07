@@ -4,5 +4,13 @@
     <string name="sem_conexao">Sem conexão com internet por favor verifique</string>
     <string name="escolher_dias">Escolha o dia abaixo </string>
     <string name="procurar">Buscar a saída (bairro) </string>
+    <string name="title_activity_sobre">Sobre</string>
+
+    <string name="descricao_sobre">Desenvolvido por Anderson Luis de Assis, este aplicativo tem como foco principal facilitar
+    utlização do serviço de transporte publico da cidade de  Amparo-SP pelos seus cidadãos.
+        As informações aqui divulgadas foram obtidas atraves do site \n (http://www.miragetransportes.com.br/linhas-amparo)e sua ajuda é
+    fundamental para manter o aplicativo funcionando da melhor maneira possível.
+    Você pode enviar sugestões, criticas, e/ou duvidas logo abaixo.</string>
+
 
 </resources>

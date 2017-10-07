@@ -22,10 +22,13 @@
         </activity>
         <activity android:name=".DiasSemana" />
         <activity android:name=".testarConexao.VerificarConexao" />
-        <activity android:name=".Horarios"
-                  android:windowSoftInputMode="stateHidden">
-
-        </activity>
+        <activity
+            android:name=".Horarios"
+            android:windowSoftInputMode="stateHidden"></activity>
+        <activity
+            android:name=".Sobre"
+            android:label="@string/title_activity_sobre"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
