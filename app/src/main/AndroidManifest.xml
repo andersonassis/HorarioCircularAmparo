@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+                  android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -37,15 +38,22 @@
 
 
 
-        <activity android:name=".DiasSemana" />
+        <activity android:name=".DiasSemana"
+                  android:screenOrientation="portrait"/>
         <activity android:name=".testarConexao.VerificarConexao" />
         <activity
             android:name=".Horarios"
-            android:windowSoftInputMode="stateHidden"></activity>
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden">
+
+        </activity>
         <activity
             android:name=".Sobre"
+            android:screenOrientation="portrait"
             android:label="@string/title_activity_sobre"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
     </application>
 
 </manifest>
