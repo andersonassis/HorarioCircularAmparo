@@ -14,6 +14,17 @@
         android:layout_height="wrap_content"
         android:hint="@string/procurar"/>
 
+    <ProgressBar
+        android:id="@+id/progressbarHorarios"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:max="100"
+        android:backgroundTint="@android:color/white"
+        android:indeterminateTint="#1a09d6" />
+
+
 
     <ListView
         android:id="@+id/listview"

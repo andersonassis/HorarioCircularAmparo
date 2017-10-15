@@ -5,6 +5,8 @@
     <string name="escolher_dias">Escolha o dia abaixo </string>
     <string name="procurar">Buscar a saída (bairro) </string>
     <string name="title_activity_sobre">Sobre</string>
+    <string name="statusbar">Baixando os horários.....</string>
+    <string name="statusbar2">Escolha a linha abaixo</string>
 
     <string name="descricao_sobre">Desenvolvido por Anderson Luis de Assis, este aplicativo tem como foco principal facilitar
     utlização do serviço de transporte publico da cidade de  Amparo-SP pelos seus cidadãos.

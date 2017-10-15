@@ -1,6 +1,8 @@
 package br.com.andersonluisassis.amparo.onibus.horario.horariocircularamparo;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -8,6 +10,9 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -35,6 +40,10 @@ public class MainActivity extends AppCompatActivity implements ValueEventListene
     private LinhaAdapter adaptador;
     @BindView(R.id.recyclerView) RecyclerView  reciclada;
     int cont = 0;
+    @BindView(R.id.progressbar) ProgressBar progress;
+    @BindView(R.id.texto_bar)TextView textobar;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,10 +61,18 @@ public class MainActivity extends AppCompatActivity implements ValueEventListene
             finish();
 
         }
-        data_reference  = database.getReference().child("linhas");
-        data_reference.addValueEventListener(this);
+        //conectando ao firebase no linhas
+        firebase();
+        progress.setVisibility(View.VISIBLE);
+
+
 
     }//fim do oncreate
+
+    private void firebase() {
+        data_reference  = database.getReference().child("linhas");
+        data_reference.addValueEventListener(this);
+    }
 
     @Override
     public void onDataChange(DataSnapshot dataSnapshot) {
@@ -75,6 +92,9 @@ public class MainActivity extends AppCompatActivity implements ValueEventListene
         reciclada.setAdapter(adaptador);
         reciclada.setHasFixedSize(true);
         reciclada.setLayoutManager(new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.VERTICAL,false));
+        progress.setVisibility(View.INVISIBLE);
+        textobar.setText(getString(R.string.statusbar2));
+
 
     }
 
@@ -93,7 +113,6 @@ public class MainActivity extends AppCompatActivity implements ValueEventListene
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
-
 
 
     @Override

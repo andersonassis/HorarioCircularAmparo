@@ -6,8 +6,10 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -30,6 +32,7 @@ public class Horarios extends AppCompatActivity implements ValueEventListener {
     private DatabaseReference data_reference;
     @BindView(R.id.listview) ListView listview;
     @BindView(R.id.search) EditText procurar;
+    @BindView(R.id.progressbarHorarios) ProgressBar progress;
     public List<HorariosModel> lista = new ArrayList<>();
     private AdaptadorNovo adaptador;
     int cont = 0;
@@ -60,6 +63,7 @@ public class Horarios extends AppCompatActivity implements ValueEventListener {
 
         //inicia o firebase
        firebase();
+        progress.setVisibility(View.VISIBLE);
 
 
        //campo buscar
@@ -101,6 +105,7 @@ public class Horarios extends AppCompatActivity implements ValueEventListener {
 
         adaptador = new AdaptadorNovo(this, lista);
         listview.setAdapter(adaptador);
+        progress.setVisibility(View.INVISIBLE);
 
     }
 
