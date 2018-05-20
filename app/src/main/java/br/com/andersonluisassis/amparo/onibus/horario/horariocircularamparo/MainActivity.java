@@ -1,8 +1,10 @@
 package br.com.andersonluisassis.amparo.onibus.horario.horariocircularamparo;
 
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -127,7 +129,29 @@ public class MainActivity extends AppCompatActivity implements ValueEventListene
     }//fim do menu sobre
 
 
+    @Override
+     public void onBackPressed(){
+        AlertDialog alerta;
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("ATENÇÃO!!!");
+        builder.setMessage("DESEJA SAIR DO APLICATIVO ?");
+        builder.setPositiveButton("SAIR", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface arg0, int arg1) {
+                finish();
+                System.exit(0);
+            }
+        });
+        builder.setNegativeButton("NÃO", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface arg0, int arg1) {
 
+            }
+        });
+        //cria o AlertDialog
+        alerta = builder.create();
+        //Exibe
+        alerta.show();
+
+    }//FIM DO onBackPressed
 
 
 }
